@@ -285,6 +285,7 @@ class TitanicService:
         print(f'나이브베이즈 검증결과: {model.accuracy_by_nb(this)}')
         print(f'KNN 검증결과: {model.accuracy_by_knn(this)}')
         print(f'SVM 검증결과: {model.accuracy_by_svm(this)}')
+        #return this
 
     def submit(self, train, test): # machine 이 된다. 이 단계는 캐글에게 내 머신이를 보내서 평가받게 하는 것 입니다. 마치 수능장에 자식보낸 부모님 마음 ...
         this = self.modeling(train, test)
