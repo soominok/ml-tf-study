@@ -238,6 +238,12 @@ class TitanicService:
         print(f'>> Test 변수 : {this.train.columns}')
         return this
 
+    
+    @staticmethod
+    def data_types(data):
+        types = data.dtypes
+        return types
+
     def preprocessing(self, train, test):
         model = self.model
         this = self.fileReader
@@ -273,6 +279,7 @@ class TitanicService:
         print(f'{this.train.isnull().sum()}')
         print(f'######## test na 체크 ##########')
         print(f'{this.test.isnull().sum()}')
+        print(self.data_types(this.train))
         return this
         
 
