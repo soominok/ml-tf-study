@@ -49,7 +49,7 @@ class FileReader:
 class TitanicModel:
     def __init__(self):
         self.fileReader = FileReader()  
-        self.data = os.path.abspath("com_titanic_api/titanic/data")
+        self.data = os.path.abspath("titanic/data")
     
     def new_model(self, payload) -> object:
         this = self.fileReader
@@ -301,9 +301,10 @@ class TitanicService:
         prediction = clf.predict(this.test)
         pd.DataFrame(
             {'PassengerId' : this.id, 'Survived' : prediction}
-        ).to_csv(os.path.join('com_titanic_api/titanic/data','submission.csv'), index=False)
+        ).to_csv(os.path.join('titanic/data','submission.csv'), index=False)
 
 
 if __name__ == '__main__':
     service = TitanicService()
-    service.submit('train.csv','test.csv')
+    service.learning('train.csv','test.csv')
+    # service.submit('train.csv','test.csv')
