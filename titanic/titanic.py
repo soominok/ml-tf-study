@@ -212,7 +212,7 @@ class TitanicModel:
         return round(np.mean(score) * 100, 2)
     
     def accuracy_by_knn(self, this):
-        knn = KNeighborsClassifier()
+         
         score = cross_val_score(knn, this.train, this.label, cv=TitanicModel.create_k_fold(),\
              n_jobs=1, scoring='accuracy')
         return round(np.mean(score) * 100, 2)
